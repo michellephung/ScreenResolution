@@ -101,25 +101,27 @@ describe("Screen Resolution Calculator", function(){
       });
     });
     
+
     
     it('computes DPI (dotsPerInch)',function(){
       expect(calc[0].getDotsPerInch()).toEqual(80.81);
-      expect(calc[1].getDotsPerInch()).toEqual();
-      expect(calc[2].getDotsPerInch()).toEqual();
-      expect(calc[3].getDotsPerInch()).toEqual();
-      expect(calc[4].getDotsPerInch()).toEqual();
-      expect(calc[5].getDotsPerInch()).toEqual();
+      expect(calc[1].getDotsPerInch()).toEqual(81.3);
+      expect(calc[2].getDotsPerInch()).toEqual(85.33);
+      expect(calc[3].getDotsPerInch()).toEqual(81.01);
+      expect(calc[4].getDotsPerInch()).toEqual(81.1);
+      expect(calc[5].getDotsPerInch()).toEqual(81.63);
     });
     
     it('computes aspect ratio', function(){
-      expect(calc[0].getAspectRatio()).toEqual();
-      expect(calc[1].getAspectRatio()).toEqual();
-      expect(calc[2].getAspectRatio()).toEqual();
-      expect(calc[3].getAspectRatio()).toEqual();
-      expect(calc[4].getAspectRatio()).toEqual();
-      expect(calc[5].getAspectRatio()).toEqual();
+      expect(calc[0].getAspectRatio()).toEqual("4:3");
+      expect(calc[1].getAspectRatio()).toEqual("4:3");
+      expect(calc[2].getAspectRatio()).toEqual("4:3");
+      expect(calc[3].getAspectRatio()).toEqual("4:3");
+      expect(calc[4].getAspectRatio()).toEqual("192:145");
+      expect(calc[5].getAspectRatio()).toEqual("4:3");
 
     });
+
     
     
     
