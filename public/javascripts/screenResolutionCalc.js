@@ -1,4 +1,4 @@
-function screenResolutionCalculator(diagonal_Inches,pixel_Height,pixel_Width){
+function screenResolutionCalculator(diagonal_Inches,pixel_Width,pixel_Height){
 
   var diagonalInches ;
   var pixelHeight  ; 
@@ -8,7 +8,7 @@ function screenResolutionCalculator(diagonal_Inches,pixel_Height,pixel_Width){
   var heightInches=0;
   
   this.initialize = function(){
-    this.setDimensions(diagonal_Inches,pixel_Height,pixel_Width);
+    this.setDimensions(diagonal_Inches,pixel_Width,pixel_Height);
   }
 
   this.getDiagonal = function(){
@@ -34,15 +34,28 @@ function screenResolutionCalculator(diagonal_Inches,pixel_Height,pixel_Width){
     return parseFloat(heightInches.toFixed(2));
   }
   
-  this.setDimensions=function(diagonal,pxHeigh,pxWidth){
-    diagonalInches = diagonal_Inches;
-    pixelHeight = pixel_Height;
-    pixelWidth = pixel_Width;
+  this.setDimensions=function(diagonal,pxWidth, pxHeight){
+    diagonalInches = diagonal;
+    pixelHeight = pxHeight;
+    pixelWidth = pxWidth;
     ratio = pixelHeight/pixelWidth;
     
     widthInches = Math.sqrt((diagonalInches*diagonalInches)/(1+(ratio*ratio)));
-    heightInches=widthInches*ratio;
+    heightInches= widthInches*ratio;
   }
+  
+  this.setDiagonal = function(dInches){
+    this.setDimensions(dInches,pixelWidth,pixelHeight);
+  }
+  
+  this.setPixelWidth = function(pWidth){
+    this.setDimensions(diagonalInches, pWidth,pixelHeight);
+  }
+  
+  this.setPixelHeight = function(pHeight){
+    this.setDimensions(diagonalInches,pixelWidth,pHeight);
+  }
+  
   
   this.initialize();
 
