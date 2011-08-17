@@ -121,11 +121,6 @@ describe("Screen Resolution Calculator", function(){
       expect(calc[5].getAspectRatio()).toEqual("4:3");
 
     });
-
-    
-    
-    
-
   });
   
  
